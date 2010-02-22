@@ -1,0 +1,7 @@
+{% extends "content/post.twig" %}
+
+{% block content %}
+                        <h2 class="title"><a href="$post.source" class="link">${ post.name }</a></h2>
+                        ${ post.description | strip | read_more | replace('mcrittenden','<a href="http://twitter.com/mcrittenden" title="Mike Crittenden on Twitter">@mcrittenden</a>') }
+{% endblock %}
+

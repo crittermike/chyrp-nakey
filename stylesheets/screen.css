@@ -1,0 +1,33 @@
+body { line-height: 1.6; width: 600px; font-family: Georgia,serif; margin: 0 auto; font-size: 125%; color: black; background: white; }
+html { background: white; }
+a { color: #333; }
+h1 a { font-size: 75px; font-size: 50px; display: block; width: 600px; height: 80px; text-indent: -9999px; background: transparent url(../images/mtc_bold.gif) no-repeat center top; }
+h1 a:hover { background: transparent url(../images/mtc_bold.gif) no-repeat center -91px; }
+a:hover, .twitter a:hover, .delicious a:hover, #wtf a:hover, .post_links a:hover { text-decoration: none; background-color: black; color: white; }
+.date { font-size: 45px; border-bottom: 1px solid #333; margin-bottom: 15px; font-family: Helvetica, Arial, sans-serif; }
+#search { background: white; color: black; border: 1px solid black; width: 497px; margin-bottom: 50px; font-size: 20px; font-family: Helvetica, Arial, sans-serif; }
+#search_submit { width: 90px; font-size: 20px; background: black; color: white; border: none; padding: 2px 3px; font-family: Helvetica, Arial, sans-serif; }
+#wtf { margin-bottom: 40px; text-align: center; }
+h2.title, .page h1, .post h1 {font-family: Helvetica, Arial, sans-serif;}
+.post { margin-bottom: 70px; clear: both; }
+blockquote { font-style: italic; color: #666; }
+.twitter { font-size: 90%; color: #666; }
+pre { width: 580px; overflow-x: auto; background: #333; color: #eee; padding: 10px 10px; }
+.pages { display: block; text-align: center; width: 350px; margin: 0 auto; }
+.prev_page, .prev_post { float: left; position: relative; top: -24px; }
+.next_page, .next_post { float: right; position: relative; top: -24px; }
+.post_links, .post_links a { text-align: right; font-size: 16px; color: #666; font-family: Helvetica, Arial, sans-serif; }
+.photo .photo_image, .photo p { color:#666; font-style:italic; text-align:center;}
+.delicious h2 a { font-weight: normal; font-size: 75%; color: #666; background: transparent url(../images/delicious.png) no-repeat left center; padding-left: 40px; }
+.link .post_links .info, .twitter h2, li.no_comments { display: none; }
+.post_nav { padding-bottom: 30px; }
+button { background: black; border: none; color: white; }
+input, textarea { border: 1px solid black; }
+#add_comment { margin-top: 60px; }
+label { display: block; }
+#comments li blockquote { margin-left: 10px; }
+cite { display: block; text-align: right; font-size: 90%; font-family: Helvetica, Arial, sans-serif; font-style: normal; }
+li.author blockquote { font-style: normal; color: black; }
+li.author cite strong a { background: #222; color: white; text-decoration: none;}
+.text_body ul li { margin-bottom: 10px; }
+.text_body ul { margin-bottom: 25px; }

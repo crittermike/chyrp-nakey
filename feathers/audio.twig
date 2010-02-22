@@ -1,0 +1,9 @@
+{% extends "content/post.twig" %}
+
+{% block content %}
+                      <div class="audio_inner">
+                        $post.audio_player
+                        <div class="clear"></div>
+                        ${ post.description | read_more }
+											</div>
+{% endblock %}

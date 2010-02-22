@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head profile="http://gmpg.org/xfn/11">
+        <meta http-equiv="Content-type" content="$theme.type; charset=utf-8" />
+        <title>{% block title %}$site.name{% if title %} &raquo; ${ title | escape }{% endif %}{% endblock %}</title>
+
+        <meta name="generator" content="Chyrp" />
+        <meta name="description" content="Mike The Coder is a blog by Mike Crittenden, a Greenville, SC based web developer. Topics include Drupal, web development and design, HTML and CSS, jQuery, geek culture, CodeIgniter, fried chicken, etc." />
+        <meta name="keywords" content="drupal, coding, hacking, web development, mike, crittenden, greenville, south carolina, merge, blog"/>
+
+        <link rel="pingback" href="$site.chyrp_url/includes/xmlrpc.php" />
+        <link rel="EditURI" type="application/rsd+xml" href="$site.chyrp_url/includes/rsd.php" />
+		<link type="image/x-icon" href="$site.url/favicon.ico" rel="shortcut icon"/>
+
+		<!--[if IE 6]>
+			<style type="text/css" media="screen">
+				html {filter:gray;}
+				body {margin-top:0;}
+				#browseSad {background:#000;border-bottom:10px solid #fff;left:0;top:0;width:100%;}
+				#browseSad * {color:#fff;text-align:center;}
+				#browseSad div {margin:24px 48px;}
+				#browseSad h1 {font-size:21px;margin:0 0 5px;}
+				#browseSad h2 {font-size:16px;margin:0 0 10px;}
+				#browseSad p {font-size:14px;margin:0;}
+				#browseSad a {font-weight:bold;text-decoration:underline;}
+			</style>
+			<div id="browseSad">
+			    <div>
+			        <h1>Oh dear, you are using Internet Explorer 6! It is time for an update!</h1>
+			        <h2>We are sorry but Internet Explorer 6 is so old that we cannot support it anymore.</h2>
+			        <p>Please go to <a href="http://browsesad.com">Browse Sad</a> website to find out why and how to upgrade your browser.</p>
+			    </div>
+		    </div>
+		<![endif]-->
+
+        $theme.feeds
+        $theme.stylesheets
+        $theme.javascripts
+
+        ${ trigger.call("head") }
+
+	 </head>
+	 <body>
+
+        <div id="header">
+
+            <h1><a href="$site.url">Mike The Coder</a></h1>
+
+            <form class="head_search" action="$site.url" method="get" accept-charset="utf-8">
+                <input type="hidden" name="action" value="search" id="action" />
+                <input type="text" id="search" name="query" value="${ GET.query | escape }" />
+                <input type="submit" value="Search" id="search_submit" />
+            </form>
+
+        </div>
+
+        {% for type, messages in flash.all | items %}
+        {% for message in messages %}
+        <div class="${ type | depluralize }">$message</div>
+        {% endfor %}
+        {% endfor %}
+        {% block content %}{% endblock %}
+	    <div class="post_nav">
+
+            {% if posts.paginated and posts.pages > 1 %}
+            <span class="pages">${ "Page %d of %d" | translate | format(posts.page, posts.pages) }</span>
+            {% endif %}
+
+            $posts.prev_link
+		    $posts.next_link
+
+	    </div>
+	
+	        <p id="wtf"><a href="/mike" title="Mike">WTF?</a></p>
+        ${ trigger.call("end_content") }
+        <!-- Queries: $sql_queries | Load Time: $theme.load_time -->
+
+		<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-6322775-3");
+                pageTracker._trackPageview();
+            } catch(err) {}
+        </script>
+
+    </body>
+</html>
+
